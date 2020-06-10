@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/contrib'
+require "sinatra/reloader"
 
 get '/' do
 	json hello: 'world'
