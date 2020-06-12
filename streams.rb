@@ -3,6 +3,7 @@
 require 'sinatra'
 require 'sinatra/contrib'
 require 'sinatra/reloader'
+require_relative './stream'
 
 get '/' do
   json hello: 'world'
@@ -29,4 +30,8 @@ get '/streams' do
     adurl: 'http://deepakdhakal.com/nm.png',
     helpText: 'https://itunes.apple.com/us/app/nepali-music/id463395900?mt=8'
   )
+end
+
+get '/test' do
+  ::Stream.new
 end
