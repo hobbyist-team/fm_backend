@@ -1,18 +1,24 @@
 # frozen_string_literal: true
 
+ENV['APP_ENV'] = 'test'
+
 require 'rack/test'
 require 'rspec'
 require 'pry'
 
-ENV['RACK_ENV'] = 'test'
+require_relative '../config/environment'
+require_relative '../app/controllers/application_controller'
 
-require File.expand_path '../streams.rb', __dir__
+set :environment, :test
+set :port, 4567
 
 module RSpecMixin
   include Rack::Test::Methods
 
   def app
-    Sinatra::Application
+    # Sinatra::Application
+    # MySinatraApp
+    Rack::Builder.parse_file('config.ru').first
   end
 end
 
