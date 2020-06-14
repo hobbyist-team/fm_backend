@@ -2,7 +2,7 @@
 
 require File.expand_path 'spec_helper.rb', __dir__
 
-describe 'hello world' do
+describe StreamsController do
   let(:status) { last_response.status }
   let(:keys) { JSON.parse(last_response.body)[0].keys }
   let(:expected_keys) { %w[id title image_url frequency] }
