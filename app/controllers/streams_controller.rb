@@ -3,14 +3,12 @@
 #
 # Streams API Controller
 #
-
 class StreamsController < ApplicationController
   def initialize(params)
     super(params)
 
-    file = File.open(File.join(File.dirname(__FILE__), "../../data/seedFile.json"))
-    @streams = JSON.load file
-    file.close
+    file = File.read(File.join(File.dirname(__FILE__), '../../data/seedFile.json'))
+    @streams = JSON.parse(file)
   end
 
   get '/streams' do
