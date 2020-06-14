@@ -110,6 +110,7 @@ DEPENDENCIES
   dynamoid (~> 3.5)
   pry (~> 0.13.1)
   puma (~> 4.3, >= 4.3.5)
+  rack (~> 2.2, >= 2.2.2)
   rack-test
   require_all (~> 3.0)
   rspec (~> 3.4)
