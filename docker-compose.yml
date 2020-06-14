@@ -1,0 +1,18 @@
+version: '3.8'
+networks:
+  fm-network:
+    driver: bridge
+services:
+  web:
+    container_name: fm-backend
+    restart: always # Docker recommends that you use restart policies
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rackup -o 0.0.0.0 -p 3000 config.ru"
+    volumes:
+      - .:/app
+    ports:
+      - "4567:3000"
+    env_file:
+      - '.env'
+    networks:
+      - fm-network
