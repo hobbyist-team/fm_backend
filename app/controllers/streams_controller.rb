@@ -6,9 +6,7 @@
 class StreamsController < ApplicationController
   def initialize(params)
     super(params)
-
-    file = File.read(File.join(File.dirname(__FILE__), '../../data/seedFile.json'))
-    @streams = JSON.parse(file)
+    @streams = Streams.new.streams
   end
 
   get '/streams' do
