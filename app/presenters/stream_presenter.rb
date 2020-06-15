@@ -10,16 +10,20 @@ module Presenters
         new(
           obj['id'],
           obj['title'],
-          obj['image_url'],
+          obj['imageUrl'],
           obj['frequency']
         )
       end
     end
 
+    def self.update(id, params)
+      ::Models::Stream.update(id, params)
+    end
+
     def initialize(id, title, image_url, frequency)
       @id = id
       @title = title
-      @image_url = image_url
+      @imageUrl = image_url # rubocop:disable Naming/VariableName
       @frequency = frequency
     end
   end
