@@ -9,7 +9,7 @@ class StreamsController < ApplicationController
   end
 
   patch '/streams/:id' do
-    has_valid_body = %w[title imageUrl frequency].any? { |key| !params[key].to_s.empty? }
+    has_valid_body = %w[title imageUrl frequency].any? { |key| params[key].present? }
 
     unless has_valid_body
       status 400
