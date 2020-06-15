@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 #
-# Streams model. Holds an array of streams.
+# Streams model.
 #
 class Stream
   def self.data
