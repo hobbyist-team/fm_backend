@@ -10,14 +10,11 @@ module Presenters
         new(
           obj['id'],
           obj['title'],
+          # front-end relies on camelCased attributes
           obj['imageUrl'],
           obj['frequency']
         )
       end
-    end
-
-    def self.update(id, params)
-      ::Models::Stream.update(id, params)
     end
 
     def initialize(id, title, image_url, frequency)
