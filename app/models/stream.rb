@@ -5,7 +5,6 @@ module Models
   # Streams model.
   #
   class Stream
-
     private_class_method def self.save
       File.open(File.join(File.dirname(__FILE__), '../../data/seedFile.json'), 'w') do |f|
         f.write(@@data.to_json)
@@ -14,7 +13,7 @@ module Models
 
     private_class_method def self.update_stream(stream, params)
       params.each do |key, value|
-        unless value.to_s.empty? stream[key] = value
+        unless value.to_s.empty? { stream[key] = value }
         end
       end
       stream
@@ -31,7 +30,7 @@ module Models
     end
 
     def self.update(id, params)
-      @@data = data.collect! | stream | stream['id'] == id ? update_stream(stream, params) : stream
+      @@data = data.collect! { |stream|  stream['id'] == id ? update_stream(stream, params) : stream }
 
       save
       @@data.detect { |item| item['id'] == id }

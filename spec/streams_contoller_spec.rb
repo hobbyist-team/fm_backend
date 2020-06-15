@@ -2,7 +2,7 @@
 
 require File.expand_path 'spec_helper.rb', __dir__
 
-describe StreamsControllerGet do
+describe StreamsController do
   let(:status) { last_response.status }
   let(:keys) { JSON.parse(last_response.body)[0].keys }
   let(:expected_keys) { %w[id title imageUrl frequency] }
@@ -24,20 +24,6 @@ describe StreamsControllerGet do
     expect(last_response).to be_ok
     expect(keys).to match_array expected_keys
     expect(status).to eq 200
-  end
-end
-
-describe StreamsControllerPatch do
-  before(:each) do
-    mock_data = {
-      'id' => '2',
-      'imageUrl' => 'http://after-update/mock.png',
-      'title' => 'http://before-update/mock.png',
-      'frequency' => 'mock_frequency'
-    }
-
-    allow(::Models::Stream).to receive(:data).and_return([mock_data])
-    allow(::Models::Stream).to receive(:save)
   end
 
   it 'returns streams response' do
