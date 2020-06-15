@@ -10,7 +10,8 @@ module Presenters
         new(
           obj['id'],
           obj['title'],
-          obj['image_url'],
+          # front-end relies on camelCased attributes
+          obj['imageUrl'],
           obj['frequency']
         )
       end
@@ -19,7 +20,7 @@ module Presenters
     def initialize(id, title, image_url, frequency)
       @id = id
       @title = title
-      @image_url = image_url
+      @imageUrl = image_url # rubocop:disable Naming/VariableName
       @frequency = frequency
     end
   end
