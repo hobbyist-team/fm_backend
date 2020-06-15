@@ -10,7 +10,7 @@ describe StreamsController do
   it 'should return hello world api response' do
     get '/streams'
     expect(last_response).to be_ok
-    expect(keys).to eq expected_keys
+    expect(keys).to match_array expected_keys
     expect(status).to eq 200
   end
 end

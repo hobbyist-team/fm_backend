@@ -5,6 +5,6 @@
 #
 class StreamsController < ApplicationController
   get '/streams' do
-    json(::Streams.all)
+    json ::Presenters::StreamPresenter.presents(::Stream.all)
   end
 end
