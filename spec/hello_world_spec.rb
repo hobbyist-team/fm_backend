@@ -2,7 +2,7 @@
 
 require File.expand_path 'spec_helper.rb', __dir__
 
-describe 'hello world' do
+describe ApplicationController do
   let(:status) { last_response.status }
   let(:body) { JSON.parse(last_response.body) }
   let(:expected_body) { { 'about' => 'Welcome to FM service!', 'environment' => 'test' } }

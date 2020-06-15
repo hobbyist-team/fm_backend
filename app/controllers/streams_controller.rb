@@ -4,12 +4,7 @@
 # Streams API Controller
 #
 class StreamsController < ApplicationController
-  def initialize(params)
-    super(params)
-    @streams = Streams.new.streams
-  end
-
   get '/streams' do
-    json(@streams)
+    json ::Presenters::StreamPresenter.presents(::Stream.all)
   end
 end
