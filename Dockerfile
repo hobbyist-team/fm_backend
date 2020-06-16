@@ -21,3 +21,4 @@ COPY Gemfile /app
 COPY Gemfile.lock /app
 RUN bundle install
 COPY . /app
+RUN [ -f .env ] && '' || touch .env 
