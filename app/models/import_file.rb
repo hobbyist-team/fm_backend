@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Models
   #
   # ImportFile read json file and insert to dynamo db
