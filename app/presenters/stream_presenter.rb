@@ -22,7 +22,7 @@ module Presenters
     def initialize(id, title, image_url, frequency)
       @id = id
       @title = title
-      @image_url = image_url # rubocop:disable Naming/VariableName
+      @image_url = image_url
       @frequency = frequency
     end
   end
