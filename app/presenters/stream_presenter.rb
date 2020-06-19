@@ -5,8 +5,6 @@ module Presenters
   # Presenter for Streams
   #
   class StreamPresenter
-    # attr_reader added - used by importFile model
-    attr_reader :id, :title, :imageUrl, :frequency
     def self.presents(data)
       data.map do |obj|
         new(
