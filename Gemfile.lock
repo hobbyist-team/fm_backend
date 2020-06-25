@@ -49,7 +49,7 @@ GEM
       method_source (~> 1.0)
     puma (4.3.5)
       nio4r (~> 2.0)
-    rack (2.2.2)
+    rack (2.2.3)
     rack-protection (2.0.8.1)
       rack
     rack-test (1.1.0)
@@ -110,7 +110,7 @@ DEPENDENCIES
   dynamoid (~> 3.5)
   pry (~> 0.13.1)
   puma (~> 4.3, >= 4.3.5)
-  rack (~> 2.2, >= 2.2.2)
+  rack (~> 2.2)
   rack-test
   require_all (~> 3.0)
   rspec (~> 3.4)
