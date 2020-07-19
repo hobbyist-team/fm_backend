@@ -22,6 +22,11 @@ module Models
       new_data.detect { |item| item['id'] == id }
     end
 
+    def self.delete(id)
+      new_data = data.delete_if { |stream| stream['id'] == id}
+      save(new_data)
+    end
+
     class << self
       private
 

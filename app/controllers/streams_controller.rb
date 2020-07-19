@@ -18,4 +18,11 @@ class StreamsController < ApplicationController
 
     json ::Models::Stream.update(params[:id], params.reject { |key| key == 'id' })
   end
+
+  delete '/streams/:id' do
+    json ::Models::Stream.delete(params[:id])
+
+    status 200
+    body 'Successfully removed'
+  end
 end
