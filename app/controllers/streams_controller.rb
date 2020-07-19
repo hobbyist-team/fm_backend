@@ -36,7 +36,6 @@ class StreamsController < ApplicationController
       body 'Invalid request. Not all attributes provided in the request body.'
     end
 
-    status 501
-    body 'Under construction'
+    json ::Models::Stream.create(data)
   end
 end

@@ -22,6 +22,14 @@ module Models
       new_data.detect { |item| item['id'] == id }
     end
 
+    def self.create(stream)
+      new_id = data.last['id'].to_i+1
+      stream['id'] = new_id.to_s
+      new_data = data.push(stream)
+      save(new_data)
+      new_data.detect{ |item| item['id'] == new_id.to_s }
+    end
+
     class << self
       private
 
