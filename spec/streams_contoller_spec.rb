@@ -50,4 +50,28 @@ describe StreamsController do
       expect(status).to eq 400
     end
   end
+
+  context 'with add' do
+    it 'returns a 400 error when all keys present' do
+      request_mock_data = {
+        'title' => 'new_fm'
+      }
+
+      post '/streams', body: request_mock_data.to_json
+      
+      expect(status).to eq 400
+    end
+
+    it 'adds new fm' do
+      request_mock_data = {
+        'title' => 'new_fm',
+        'url' => 'http://new-fm',
+        'imageUrl' => 'http://new-fm.png',
+        'frequency' => '100'
+      }
+      post '/streams', body: request_mock_data.to_json
+
+      expect(status).to eq 501
+    end
+  end
 end
