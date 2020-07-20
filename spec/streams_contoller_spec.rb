@@ -50,4 +50,14 @@ describe StreamsController do
       expect(status).to eq 400
     end
   end
+
+  context 'with delete' do
+    it 'removes the stream' do
+      delete '/streams/2'
+
+      expect(last_response).to be_ok
+      expect(status).to eq 200
+      expect(last_response.body).to match 'Successfully removed'
+    end
+  end
 end
