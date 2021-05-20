@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 ruby '2.6.2'
 
 gem 'dynamoid', '~> 3.5'                      # storage for our streams
-gem 'puma', '~> 4.3', '>= 4.3.5'              # puma server to run our code base
+gem 'puma', '~> 4.3'                        # puma server to run our code base
 gem 'rack', '~> 2.2'                          # provides a minimal, modular and adaptable interface
 gem 'require_all', '~> 3.0'                   # wonderfully simple way to load your code
 gem 'rubocop', '~> 0.85.0'                    # linters, tidy your code-up
